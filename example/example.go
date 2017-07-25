@@ -17,3 +17,8 @@ func (e *exampleModule) Init(logger freeradius.Log) error {
 	e.radlog.Radlog(freeradius.LogTypeInfo, "Init from go plugin")
 	return nil
 }
+
+func (e *exampleModule) Authorize(req freeradius.Request) freeradius.RlmCode {
+	e.radlog.Info("Authorize in example module called")
+	return freeradius.RlmCodeNoop
+}
