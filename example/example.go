@@ -1,4 +1,4 @@
-package example
+package main
 
 import (
 	"github.com/dereulenspiegel/freeradius-go"
@@ -22,3 +22,5 @@ func (e *exampleModule) Authorize(req freeradius.Request) freeradius.RlmCode {
 	e.radlog.Info("Authorize in example module called")
 	return freeradius.RlmCodeNoop
 }
+
+func main() {}
